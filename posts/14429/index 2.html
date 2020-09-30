@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>得未曾有|BD7IWD</title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body>
+<header class="header">
+    <div class="header-inner">
+        <div class="header-title">
+
+        </div>
+        <nav class="header-nav">
+            
+            <a href="/" class="header-nav-link" >
+                首页
+            </a>
+            
+
+            
+            <a href="/archives" class="header-nav-link">
+                归档
+            </a>
+            
+
+            
+            <a href="/tags" class="header-nav-link">
+                标签
+            </a>
+            
+
+            
+        </nav>
+    </div>
+</header>
+<header class="mobile-header">
+    <div class="mobile-nav">
+        <div class="mobile-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-nav-title">
+            <a href="/" class="mobile-nav-title-link">BD7IWD's Blog</a>
+        </div>
+
+    </div>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-home"></i>
+                <a href="/" class="mobile-nav-link">首页</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="/archives" class="mobile-nav-link">归档</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-tag"></i>
+                <a href="/tags" class="mobile-nav-link">标签</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-about"></i>
+                <a href="/about/" class="mobile-nav-link">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="main">
+    <div class="content-inner">
+        <div class="posts">
+    <article class="post-whole">
+        <div class="post-title">
+            <h2 class="title">自制温湿度计备忘</h2>
+            <div class="post-meta">
+                <span class="post-time">2018-07-22</span>
+                
+                <span class="post-category">
+                    
+                    <a class="category" href="/categories/%E7%89%A9%E8%81%94%E7%BD%91%C2%B7%E7%94%B5%E5%AD%90%E5%BC%80%E5%8F%91/">物联网·电子开发</a>
+                    
+                </span>
+                
+                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
+            </div>
+        </div>
+        <div class="post-toc" id="post-toc">
+    <strong class="post-toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%80%E9%9C%80%E7%A1%AC%E4%BB%B6%E8%AE%BE%E5%A4%87"><span class="toc-text">所需硬件设备</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%89%80%E9%9C%80%E8%BD%AF%E4%BB%B6%E5%BA%93"><span class="toc-text">所需软件库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%8E%A5%E7%BA%BF%E6%96%B9%E5%BC%8F"><span class="toc-text">接线方式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Arduino%E7%A8%8B%E5%BA%8F"><span class="toc-text">Arduino程序</span></a></li></ol>
+    <div class="back-to-top" id="back-to-top">
+        <a href="javascript:void(0);">回到顶部</a>
+    </div>
+</div>
+        <div class="post-content">
+            <p><img src="http://imgs.bd7iwd.online//15322390095832.jpg" alt="15322390095832"></p>
+<h1 id="所需硬件设备"><a href="#所需硬件设备" class="headerlink" title="所需硬件设备"></a>所需硬件设备</h1><table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">设备</th>
+<th align="center">数量</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">Arduino</td>
+<td align="center">1</td>
+<td align="center">我用的是 Arduino UNO</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">OLED 显示屏</td>
+<td align="center">1</td>
+<td align="center">我用的是 IIC 的</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">温湿度传感器</td>
+<td align="center">我用 DHT22</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<a id="more"></a>
+<h1 id="所需软件库"><a href="#所需软件库" class="headerlink" title="所需软件库"></a>所需软件库</h1><table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">库名</th>
+<th align="center">作用</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">U8glib</td>
+<td align="center">显示屏驱动</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">Wire</td>
+<td align="center">单线通讯库</td>
+<td align="center">用于DHT22通讯</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">dht</td>
+<td align="center">DHT22的驱动</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h1 id="接线方式"><a href="#接线方式" class="headerlink" title="接线方式"></a>接线方式</h1><table>
+<thead>
+<tr>
+<th align="center">Arduino 接口</th>
+<th align="center">设备接口</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">5V</td>
+<td align="center">OLED 屏 VCC</td>
+</tr>
+<tr>
+<td align="center">3V</td>
+<td align="center">DHT22传感器 VCC</td>
+</tr>
+<tr>
+<td align="center">GND</td>
+<td align="center">所有GND</td>
+</tr>
+<tr>
+<td align="center">A4</td>
+<td align="center">OLED 屏 SDA</td>
+</tr>
+<tr>
+<td align="center">A5</td>
+<td align="center">OLED 屏 SCL</td>
+</tr>
+<tr>
+<td align="center">02</td>
+<td align="center">DHT22 第2号引脚（VCC 旁边那个）</td>
+</tr>
+</tbody></table>
+<h1 id="Arduino程序"><a href="#Arduino程序" class="headerlink" title="Arduino程序"></a>Arduino程序</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line">  <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;U8glib.h&quot;</span></span></span><br><span class="line">  <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Wire.h&gt;</span></span></span><br><span class="line">  <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;dht.h&gt; </span></span></span><br><span class="line"></span><br><span class="line">  <span class="function">U8GLIB_SSD1306_128X64 <span class="title">u8g</span><span class="params">(U8G_I2C_OPT_NONE)</span></span>;  <span class="comment">// I2C </span></span><br><span class="line">  dht DHT;</span><br><span class="line">  </span><br><span class="line">  <span class="meta">#<span class="meta-keyword">define</span> DHT22_PIN 2</span></span><br><span class="line">  </span><br><span class="line">  <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class"> &#123;</span></span><br><span class="line">   <span class="keyword">uint32_t</span> total;</span><br><span class="line">   <span class="keyword">uint32_t</span> ok;</span><br><span class="line">   <span class="keyword">uint32_t</span> crc_error;</span><br><span class="line">   <span class="keyword">uint32_t</span> time_out;</span><br><span class="line">   <span class="keyword">uint32_t</span> connect;</span><br><span class="line">   <span class="keyword">uint32_t</span> ack_l;</span><br><span class="line">   <span class="keyword">uint32_t</span> ack_h;</span><br><span class="line">   <span class="keyword">uint32_t</span> unknown;</span><br><span class="line"> &#125; stat = &#123; <span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;  </span><br><span class="line">  </span><br><span class="line">  <span class="keyword">int</span> humidity;</span><br><span class="line">  <span class="keyword">double</span> temperature;</span><br><span class="line">  <span class="keyword">double</span> temperatureF;</span><br><span class="line">  <span class="keyword">int</span> dewPoint1;</span><br><span class="line">  String thisTemp = <span class="string">&quot;&quot;</span>;</span><br><span class="line">  String thisHumidity = <span class="string">&quot;&quot;</span>;</span><br><span class="line">  String thisDewPoint = <span class="string">&quot;&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">draw</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  u8g.setFont(u8g_font_9x15);</span><br><span class="line">  u8g.drawStr(<span class="number">39</span>,<span class="number">10</span>, <span class="string">&quot;BD7IWD&quot;</span>);</span><br><span class="line">  u8g.setFont(u8g_font_9x15); </span><br><span class="line"></span><br><span class="line">  thisTemp = String(temperature) + <span class="string">&quot;\260C&quot;</span>;</span><br><span class="line">  <span class="keyword">const</span> <span class="keyword">char</span>* newTempC = (<span class="keyword">const</span> <span class="keyword">char</span>*) thisTemp.c_str();</span><br><span class="line">  u8g.drawStr(<span class="number">55</span>,<span class="number">35</span>, newTempC);</span><br><span class="line">  u8g.setFont(u8g_font_9x15);</span><br><span class="line">  u8g.drawStr(<span class="number">8</span>,<span class="number">35</span>, <span class="string">&quot;Temp=&quot;</span>);</span><br><span class="line">  u8g.setFont(u8g_font_9x15); </span><br><span class="line">  thisHumidity = String(humidity) + <span class="string">&quot;%&quot;</span>;</span><br><span class="line">  <span class="keyword">const</span> <span class="keyword">char</span>* newHumidity = (<span class="keyword">const</span> <span class="keyword">char</span>*) thisHumidity.c_str();</span><br><span class="line">  u8g.drawStr(<span class="number">95</span>,<span class="number">55</span>, newHumidity);  </span><br><span class="line">  u8g.setFont(u8g_font_9x15);</span><br><span class="line">  u8g.drawStr(<span class="number">15</span>,<span class="number">55</span>, <span class="string">&quot;humidity=&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setup</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  Serial.begin(<span class="number">9600</span>);</span><br><span class="line">  Wire.begin();</span><br><span class="line">  Serial.println(<span class="string">&quot;DHT22&quot;</span>);</span><br><span class="line">  Serial.print(<span class="string">&quot;LIBRARY VERSION: &quot;</span>);</span><br><span class="line">  Serial.println(DHT_LIB_VERSION);</span><br><span class="line">  Serial.println();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">loop</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">uint32_t</span> start = micros();</span><br><span class="line">  <span class="keyword">int</span> chk = DHT.read22(DHT22_PIN);</span><br><span class="line">  <span class="keyword">uint32_t</span> stop = micros();</span><br><span class="line">  stat.total++;</span><br><span class="line">  <span class="keyword">switch</span> (chk)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="keyword">case</span> DHTLIB_OK:</span><br><span class="line">      stat.ok++;</span><br><span class="line">      Serial.print(<span class="string">&quot;OK,\t&quot;</span>);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> DHTLIB_ERROR_CHECKSUM:</span><br><span class="line">      stat.crc_error++;</span><br><span class="line">      Serial.print(<span class="string">&quot;Checksum error,\t&quot;</span>);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> DHTLIB_ERROR_TIMEOUT:</span><br><span class="line">      stat.time_out++;</span><br><span class="line">      Serial.print(<span class="string">&quot;Time out error,\t&quot;</span>);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> DHTLIB_ERROR_CONNECT:</span><br><span class="line">      stat.connect++;</span><br><span class="line">      Serial.print(<span class="string">&quot;Connect error,\t&quot;</span>);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> DHTLIB_ERROR_ACK_L:</span><br><span class="line">      stat.ack_l++;</span><br><span class="line">      Serial.print(<span class="string">&quot;Ack Low error,\t&quot;</span>);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> DHTLIB_ERROR_ACK_H:</span><br><span class="line">      stat.ack_h++;</span><br><span class="line">      Serial.print(<span class="string">&quot;Ack High error,\t&quot;</span>);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      stat.unknown++;</span><br><span class="line">      Serial.print(<span class="string">&quot;Unknown error,\t&quot;</span>);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  temperature = DHT.temperature;</span><br><span class="line">  humidity = DHT.humidity;</span><br><span class="line">  dewPoint(temperature,humidity);  </span><br><span class="line">  u8g.firstPage();  </span><br><span class="line">  <span class="keyword">do</span> &#123;</span><br><span class="line">    draw();</span><br><span class="line">  &#125; <span class="keyword">while</span>( u8g.nextPage() );</span><br><span class="line">  delay(<span class="number">2000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">dewPoint</span><span class="params">(<span class="keyword">double</span> celsius, <span class="keyword">double</span> humidity)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">double</span> a = <span class="number">17.271</span>;</span><br><span class="line">  <span class="keyword">double</span> b = <span class="number">237.7</span>;</span><br><span class="line">  <span class="keyword">double</span> temp = (a * celsius) / (b + celsius) + <span class="built_in">log</span>(humidity/<span class="number">100</span>);</span><br><span class="line">  dewPoint1 = (b * temp) / (a - temp);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+        </div>
+        
+        <div class="post-tag">
+            
+            <a class="tag" href="/tags/Arduino/" title="Arduino">Arduino</a>
+            
+            <a class="tag" href="/tags/AM2302/" title="AM2302">AM2302</a>
+            
+            <a class="tag" href="/tags/DHT22/" title="DHT22">DHT22</a>
+            
+            <a class="tag" href="/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6/" title="温湿度">温湿度</a>
+            
+            <a class="tag" href="/tags/OLED/" title="OLED">OLED</a>
+            
+        </div>
+        
+    </article>
+</div>
+<div class="paginator">
+    
+        
+            <a class="prev" href="/posts/65333/">
+                <i class="iconfont icon-prev"></i>
+                <span class="nav-default">2018年08月梅州胶片摄影【1】</span>
+                <span class="nav-mobile">上一篇</span>
+            </a>
+        
+        
+            <a class="next" href="/posts/8a3c5d3d/">
+                <span class="nav-default">评《乌合之众》</span>
+                <span class="nav-mobile">下一篇</span>
+                <i class="iconfont icon-next"></i>
+            </a>
+        
+    
+</div>
+<div id="comment-container"></div>
+    </div>
+</div>
+<footer class="footer-social">
+    
+
+    
+
+    
+
+    <div class="footer-copyright">
+        <p class="time-line">
+            &copy;
+            
+            
+            2020
+            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
+            <a target="_blank" href="https://github.com/iJinxin">BD7IWD</a>
+        </p>
+        <p class="theme-info">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
+            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    
+
+</script>
+</html>
