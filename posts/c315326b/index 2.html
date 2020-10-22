@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="粗缯大布裹生涯，腹有诗书耍流氓 | 一个草根摄影爱好者的自建影集、随笔随记 | 静下来，享受生活、慢下来，反思过往"><title>MMDVM热点板DMR模式简版配置过程 | 得未曾有|BD7IWD</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/normalize.css/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/pure-min.min.css"><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/purecss/build/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="//cdn.jsdelivr.net/npm/clipboard/dist/clipboard.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/codeseven/toastr/build/toastr.min.css"><meta name="generator" content="Hexo 5.2.0"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">MMDVM热点板DMR模式简版配置过程</h1><a id="logo" href="/.">得未曾有|BD7IWD</a><p class="description">粗缯大布裹生涯，腹有诗书耍流氓</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/categories/HAM%C2%B7%E4%B8%9A%E4%BD%99%E6%97%A0%E7%BA%BF%E7%94%B5/"><i class="fa fa-cog"> 业余无线电</i></a><a href="/categories/%E6%91%84%E5%BD%B1%C2%B7%E5%BD%B1%E9%9B%86/"><i class="fa fa-camera"> 摄影·影集</i></a><a href="/categories/%E6%96%87%E5%AD%A6%C2%B7%E8%AF%BB%E4%B9%A6/"><i class="fa fa-book"> 文学·读书</i></a><a href="/categories/%E7%89%A9%E8%81%94%E7%BD%91%C2%B7%E7%94%B5%E5%AD%90%E5%BC%80%E5%8F%91/"><i class="fa fa-microchip"> 电子开发</i></a><a href="/categories/%E7%BD%91%E7%BB%9C%C2%B7%E8%AE%A1%E7%AE%97%E6%9C%BA/"><i class="fa fa-dashboard"> 计算机</i></a><a href="/categories/%E8%84%91%E6%B4%9E%E5%A5%87%E6%96%87/"><i class="fa fa-bug"> 脑洞奇文</i></a><a href="/archives/"><i class="fa fa-archive"> 归档</i></a><a href="/about/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">MMDVM热点板DMR模式简版配置过程</h1><div class="post-meta">2017-11-04<span> | </span><span class="category"><a href="/categories/HAM%C2%B7%E4%B8%9A%E4%BD%99%E6%97%A0%E7%BA%BF%E7%94%B5/">HAM·业余无线电</a></span></div><div class="post-content"><blockquote>
+<p>Hi,everyone。这里是BD7IWD，DMR_ID：4607124   </p>
+<p>欢迎大家来<code>TG：66512</code>通联</p>
+</blockquote>
+<blockquote>
+<p>本文所描述的配置过程仅仅是我本人配置过程的记录，因为我没有其他模式的设备，所以本文只针对<code>DMR模式</code>的设置有效，但无法保证按照本文一步步照着设置就可以百分百让你的设备投入正常使用。如有差异，欢迎留言交流。</p>
+</blockquote>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">设备或材料</th>
+<th align="center">数量</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">电脑</td>
+<td align="center">1台</td>
+<td align="center">本人的是MAC，如果是PC则后面部分内容会有所差异</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">树莓派</td>
+<td align="center">1台</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">TF卡</td>
+<td align="center">1张</td>
+<td align="center">最小4G</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">读卡器</td>
+<td align="center">1个</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">5</td>
+<td align="center">Pi-star镜像</td>
+<td align="center">1套</td>
+<td align="center">下载地址见下文</td>
+</tr>
+</tbody></table>
+<h1 id="烧卡并启动树莓派"><a href="#烧卡并启动树莓派" class="headerlink" title="烧卡并启动树莓派"></a>烧卡并启动树莓派</h1><blockquote>
+<p>若你的电脑是Windows请自行搜索<code>Win32DiskImager</code>烧录树莓派镜像的教程，他会比MAC电脑简单非常多。因为我无法下载安装此软件，在此不多做介绍。</p>
+</blockquote>
+<p>Pi-star镜像下载地址：<a target="_blank" rel="noopener" href="http://www.pistar.uk/downloads">http://www.pistar.uk/downloads</a></p>
+<p>下载最新版本镜像并解压，然后将带有TF卡的读卡器插入电脑。</p>
+<a id="more"></a>
+<h2 id="查看读卡器磁盘信息"><a href="#查看读卡器磁盘信息" class="headerlink" title="查看读卡器磁盘信息"></a>查看读卡器磁盘信息</h2><p>执行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -lh</span><br></pre></td></tr></table></figure>
+<p><img src="http://imgs.bd7iwd.online//15098070757937.jpg" alt="15098070757937"></p>
+<p>发现我的TF卡盘符为：<code>/dev/disk2s1</code>。</p>
+<h2 id="卸载磁盘"><a href="#卸载磁盘" class="headerlink" title="卸载磁盘"></a>卸载磁盘</h2><p>接下来卸载磁盘，执行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo diskutil umount &#x2F;dev&#x2F;disk2s1</span><br></pre></td></tr></table></figure>
+<p><img src="http://imgs.bd7iwd.online//15098072021498.jpg" alt="15098072021498"></p>
+<p>会让你输入系统密码，输入时无星号，直接输就输了。输完回车即可看见提示<code>disk2s1</code>卸载成功。</p>
+<h2 id="烧录镜像"><a href="#烧录镜像" class="headerlink" title="烧录镜像"></a>烧录镜像</h2><p>接下来开始烧录镜像文件，首先你要确定并记住你的镜像文件在哪里。然后执行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dd bs&#x3D;1m if&#x3D;镜像文件绝对路径 of&#x3D;TF卡的挂载路径 conv&#x3D;sync</span><br></pre></td></tr></table></figure>
+<p>例如我的路径（请勿直接复制）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dd bs&#x3D;1m if&#x3D;&#x2F;Users&#x2F;bd7iwd&#x2F;Downloads&#x2F;Pi-Star&#x2F;Pi-Star_RPi_V3.4.6_03-Nov-2017.img of&#x3D;&#x2F;dev&#x2F;rdisk2 conv&#x3D;sync</span><br></pre></td></tr></table></figure>
+<p>如果你在写入的时候出现失败的提示，请将<code>of</code>后面的<code>rdisk</code>改成<code>disk</code>。带<code>R</code>有点类似直接写入TF卡的意思，不带<code>R</code>则有点类似非直接写入，带<code>R</code>会快一点。具体差异自行查找资料。<br><img src="http://imgs.bd7iwd.online//15098078782697.jpg" alt="15098078782697"></p>
+<h2 id="完成后的初始化配置"><a href="#完成后的初始化配置" class="headerlink" title="完成后的初始化配置"></a>完成后的初始化配置</h2><p>见到这个提示则说明烧录完成。如果你用的是<code>PI-0-W</code>，则需要去一下地址生产一个配置文件，Linux高手就不多介绍了，自己写一个即可。</p>
+<p>WIFI配置文件生成地址：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:&#x2F;&#x2F;bg3mdo.ts-ham.com&#x2F;%E6%B4%BE%E4%B9%8B%E6%98%9F%E6%97%A0%E7%BA%BF%E7%94%9F%E6%88%90&#x2F;</span><br></pre></td></tr></table></figure>
+<p>生成后将文件放到TF卡里面去，此时你的TF卡在电脑上应该叫<code>boot</code>。<br><img src="http://imgs.bd7iwd.online//15098085772590.jpg" alt="15098085772590"></p>
+<p>若不是<code>PI-0-W</code>，那你就直接插网线或想其他办法让他联网即可。<br>将TF卡跟<code>MMDVM</code>热点板都插好并给树莓派上电。<br><img src="http://imgs.bd7iwd.online//15098084497922.jpg" alt="15098084497922"></p>
+<h1 id="开机配置"><a href="#开机配置" class="headerlink" title="开机配置"></a>开机配置</h1><p>打开路由，找到Pi的IP地址，并在浏览器输入这个IP。<br><img src="http://imgs.bd7iwd.online//15098089186245.jpg" alt="15098089186245"></p>
+<p>首次登陆会让你验证身份，认证信息如下：<br><code>用户名：pi-star</code><br><code>密码：raspberry</code><br>然后照着下图填写即可<br><img src="http://imgs.bd7iwd.online//15098095514871.jpg" alt="15098095514871"></p>
+<p>点击应用后，界面自动刷新，并出现如下界面，接着配置<br><img src="http://imgs.bd7iwd.online//15098098997348.jpg" alt="15098098997348"></p>
+<h2 id="开始通联准备"><a href="#开始通联准备" class="headerlink" title="开始通联准备"></a>开始通联准备</h2><p>至此，最基本的配置已经完成，在你的DMR设备写频的时候注意，收发频率都是你刚才设置的<code>热点板本地发射频率</code>，<code>时序1</code>，<code>发射联系人</code>自己写，我只有TD370，别的设备没见过，不知道怎么弄的。我常用的发射联系人见下表：</p>
+<table>
+<thead>
+<tr>
+<th align="center">序号</th>
+<th align="center">TG</th>
+<th align="center">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">66512</td>
+<td align="center">我自己创建的通话组</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">460</td>
+<td align="center">不知道是啥，反正是中文通联的组</td>
+</tr>
+<tr>
+<td align="center">3</td>
+<td align="center">46001</td>
+<td align="center">一个很热闹的中国通话组</td>
+</tr>
+<tr>
+<td align="center">4</td>
+<td align="center">46007</td>
+<td align="center">一个7区的组</td>
+</tr>
+<tr>
+<td align="center">这里区分两个概念：<code>通话组</code>跟<code>服务器</code>，通俗的讲<code>通话组</code>有点类似微信群或者QQ群，你在组里说句话，谁能听见，就取决于这个所谓的<code>组</code>的概念。<code>服务器</code>就是刚才设置的4501那个东西，这是一个网络信息转发服务器，那么多的服务器不管选哪个都能进入那个组说话，且这几个服务器数据是同步的。服务器的不同，因网络原因会导致通话质量的不同。如同某些地方移动信号好，联通信号差那样。不管你用联通还是移动，只要你进入了那个微信群，你都能在那个群里说话，只不过可能因为信号原因，导致收发信息快慢的问题。</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center"><img src="http://imgs.bd7iwd.online//15098107735469.jpg" alt="15098107735469"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<p>配置完之后，你就可以欢快的CQ了。进入刚才配置界面的仪表盘里面，你可以看得见呼叫信息。</p>
+<blockquote>
+<p>这个Pi-star还有很多高级设置，我也没研究透，本文就是我首次配置的笔记而已，并非正式教程。欢迎留言交流。</p>
+<p>我常守TG：66512，呼号BD7IWD。欢迎通联</p>
+</blockquote>
+<p>欢迎大家来<code>TG：66512</code>通联</p>
+</div><div class="tags"><a href="/tags/HAM/"><i class="fa fa-tag"></i>HAM</a><a href="/tags/%E6%97%A0%E7%BA%BF%E7%94%B5/"><i class="fa fa-tag"></i>无线电</a><a href="/tags/DMR/"><i class="fa fa-tag"></i>DMR</a><a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"><i class="fa fa-tag"></i>树莓派</a><a href="/tags/MMDVM/"><i class="fa fa-tag"></i>MMDVM</a><a href="/tags/BD7IWD/"><i class="fa fa-tag"></i>BD7IWD</a></div><div class="post-nav"><a class="pre" href="/posts/deeedaf4/">【转载】比特大陆把台积电12nm产能全抢了</a><a class="next" href="/posts/57fcab8e/">致青春</a></div><div id="lv-container" data-id="city" data-uid="MTAyMC8yOTQyMC81OTg4"><script>(function(d, s) {
+   var j, e = d.getElementsByTagName(s)[0];
+   if (typeof LivereTower === 'function') { return; }
+   j = d.createElement(s);
+   j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+   j.async = true;
+   e.parentNode.insertBefore(j, e);
+})(document, 'script');
+</script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 分类</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/HAM%C2%B7%E4%B8%9A%E4%BD%99%E6%97%A0%E7%BA%BF%E7%94%B5/">HAM·业余无线电</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%91%84%E5%BD%B1%C2%B7%E5%BD%B1%E9%9B%86/">摄影·影集</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%96%87%E5%AD%A6%C2%B7%E8%AF%BB%E4%B9%A6/">文学·读书</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%89%A9%E8%81%94%E7%BD%91%C2%B7%E7%94%B5%E5%AD%90%E5%BC%80%E5%8F%91/">物联网·电子开发</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%C2%B7%E8%AE%A1%E7%AE%97%E6%9C%BA/">网络·计算机</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%84%91%E6%B4%9E%E5%A5%87%E6%96%87/">脑洞奇文</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/%E8%83%B6%E7%89%87%E6%91%84%E5%BD%B1/" style="font-size: 15px;">胶片摄影</a> <a href="/tags/%E6%B5%B7%E9%B8%A54B/" style="font-size: 15px;">海鸥4B</a> <a href="/tags/%E7%A6%8F%E9%A9%AC100/" style="font-size: 15px;">福马100</a> <a href="/tags/%E4%BC%8A%E5%B0%94%E7%A6%8FDelta100/" style="font-size: 15px;">伊尔福Delta100</a> <a href="/tags/%E9%BB%91%E7%99%BD%E6%91%84%E5%BD%B1/" style="font-size: 15px;">黑白摄影</a> <a href="/tags/%E6%91%84%E5%BD%B1/" style="font-size: 15px;">摄影</a> <a href="/tags/%E5%BD%B1%E9%9B%86/" style="font-size: 15px;">影集</a> <a href="/tags/%E7%A6%8F%E4%BC%A6%E8%BE%BE-VITO-B/" style="font-size: 15px;">福伦达 VITO B</a> <a href="/tags/%E5%AF%8C%E5%A3%AB-C200/" style="font-size: 15px;">富士 C200</a> <a href="/tags/%E5%BD%A9%E8%89%B2%E8%83%B6%E7%89%87/" style="font-size: 15px;">彩色胶片</a> <a href="/tags/%E5%AF%8C%E5%A3%AB-Pro160NS/" style="font-size: 15px;">富士 Pro160NS</a> <a href="/tags/HAM/" style="font-size: 15px;">HAM</a> <a href="/tags/%E6%97%A0%E7%BA%BF%E7%94%B5/" style="font-size: 15px;">无线电</a> <a href="/tags/DMR/" style="font-size: 15px;">DMR</a> <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" style="font-size: 15px;">树莓派</a> <a href="/tags/MMDVM/" style="font-size: 15px;">MMDVM</a> <a href="/tags/BD7IWD/" style="font-size: 15px;">BD7IWD</a> <a href="/tags/%E7%A6%8F%E4%BC%A6%E8%BE%BE/" style="font-size: 15px;">福伦达</a> <a href="/tags/R2M/" style="font-size: 15px;">R2M</a> <a href="/tags/%E7%A6%8F%E4%BC%A6%E8%BE%BEBESSA-R2M/" style="font-size: 15px;">福伦达BESSA R2M</a> <a href="/tags/%E6%9F%AF%E8%BE%BE/" style="font-size: 15px;">柯达</a> <a href="/tags/TMax100/" style="font-size: 15px;">TMax100</a> <a href="/tags/%E9%BB%91%E7%99%BD/" style="font-size: 15px;">黑白</a> <a href="/tags/%E9%BB%91%E7%99%BD%E8%83%B6%E7%89%87/" style="font-size: 15px;">黑白胶片</a> <a href="/tags/%E8%A1%97%E6%8B%8D/" style="font-size: 15px;">街拍</a> <a href="/tags/%E6%8A%93%E6%8B%8D/" style="font-size: 15px;">抓拍</a> <a href="/tags/%E6%89%AB%E8%A1%97/" style="font-size: 15px;">扫街</a> <a href="/tags/35mm%E9%95%9C%E5%A4%B4/" style="font-size: 15px;">35mm镜头</a> <a href="/tags/%E6%82%96%E8%AE%BA/" style="font-size: 15px;">悖论</a> <a href="/tags/%E8%84%91%E6%B4%9E/" style="font-size: 15px;">脑洞</a> <a href="/tags/%E6%99%BA%E5%95%86/" style="font-size: 15px;">智商</a> <a href="/tags/ILFORD/" style="font-size: 15px;">ILFORD</a> <a href="/tags/HP5/" style="font-size: 15px;">HP5</a> <a href="/tags/%E8%83%B6%E7%89%87/" style="font-size: 15px;">胶片</a> <a href="/tags/%E7%A6%84%E6%9D%A535/" style="font-size: 15px;">禄来35</a> <a href="/tags/Rollei35/" style="font-size: 15px;">Rollei35</a> <a href="/tags/%E7%A6%8F%E4%BC%A6%E8%BE%BER2M/" style="font-size: 15px;">福伦达R2M</a> <a href="/tags/DDX/" style="font-size: 15px;">DDX</a> <a href="/tags/%E6%98%BE%E5%BD%B1%E6%B6%B2/" style="font-size: 15px;">显影液</a> <a href="/tags/DDX%E6%98%BE%E5%BD%B1%E6%B6%B2/" style="font-size: 15px;">DDX显影液</a> <a href="/tags/%E8%BF%AB%E5%86%B2/" style="font-size: 15px;">迫冲</a> <a href="/tags/%E8%83%B6%E7%89%87%E8%BF%AB%E5%86%B2/" style="font-size: 15px;">胶片迫冲</a> <a href="/tags/Voigtlander/" style="font-size: 15px;">Voigtländer</a> <a href="/tags/Voigtlander-R2M/" style="font-size: 15px;">Voigtländer R2M</a> <a href="/tags/%E6%9F%AF%E8%BE%BETri-X400/" style="font-size: 15px;">柯达Tri-X400</a> <a href="/tags/Tri-X400/" style="font-size: 15px;">Tri-X400</a> <a href="/tags/400TX/" style="font-size: 15px;">400TX</a> <a href="/tags/%E6%B7%B1%E5%9C%B3/" style="font-size: 15px;">深圳</a> <a href="/tags/%E5%B9%B4%E8%BD%BB/" style="font-size: 15px;">年轻</a> <a href="/tags/%E5%B0%91%E5%B9%B4%E4%BE%A0%E6%B0%94/" style="font-size: 15px;">少年侠气</a> <a href="/tags/%E5%8C%BA%E5%9D%97%E9%93%BE/" style="font-size: 15px;">区块链</a> <a href="/tags/%E5%8F%B0%E7%A7%AF%E7%94%B5/" style="font-size: 15px;">台积电</a> <a href="/tags/%E6%AF%94%E7%89%B9%E5%A4%A7%E9%99%86/" style="font-size: 15px;">比特大陆</a> <a href="/tags/IC/" style="font-size: 15px;">IC</a> <a href="/tags/Jupiter-8/" style="font-size: 15px;">Jupiter-8</a> <a href="/tags/Jupiter/" style="font-size: 15px;">Jupiter-</a> <a href="/tags/%E6%9C%B1%E6%AF%94%E7%89%B9/" style="font-size: 15px;">朱比特</a> <a href="/tags/%E5%B0%A4%E6%AF%94%E6%9D%B0%E5%B0%94/" style="font-size: 15px;">尤比杰尔</a> <a href="/tags/%E5%B0%A4%E6%AF%94%E6%9D%B0%E5%B0%948/" style="font-size: 15px;">尤比杰尔8</a> <a href="/tags/%E6%9C%B1%E6%AF%94%E7%89%B98/" style="font-size: 15px;">朱比特8</a> <a href="/tags/%E7%A6%8F%E4%BC%A6%E8%BE%BE-R2M/" style="font-size: 15px;">福伦达 R2M</a> <a href="/tags/UltraMax400/" style="font-size: 15px;">UltraMax400</a> <a href="/tags/UM400/" style="font-size: 15px;">UM400</a> <a href="/tags/%E5%BD%A9%E8%89%B2/" style="font-size: 15px;">彩色</a> <a href="/tags/%E7%89%A9%E8%81%94%E7%BD%91/" style="font-size: 15px;">物联网</a> <a href="/tags/%E4%BF%A1%E6%81%AF%E5%AE%89%E5%85%A8/" style="font-size: 15px;">信息安全</a> <a href="/tags/%E5%8E%BB%E4%B8%AD%E5%BF%83%E5%8C%96/" style="font-size: 15px;">去中心化</a> <a href="/tags/%E7%99%BE%E5%B9%B4%E5%AD%A4%E7%8B%AC/" style="font-size: 15px;">百年孤独</a> <a href="/tags/%E5%8A%A0%E8%A5%BF%E4%BA%9A%C2%B7%E9%A9%AC%E5%B0%94%E5%85%8B%E6%96%AF/" style="font-size: 15px;">加西亚·马尔克斯</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 15px;">阅读</a> <a href="/tags/%E5%AF%8C%E5%A3%ABRDP3/" style="font-size: 15px;">富士RDP3</a> <a href="/tags/PROVIA100F/" style="font-size: 15px;">PROVIA100F</a> <a href="/tags/PROVIA/" style="font-size: 15px;">PROVIA</a> <a href="/tags/100F/" style="font-size: 15px;">100F</a> <a href="/tags/%E5%8F%8D%E8%BD%AC%E7%89%87/" style="font-size: 15px;">反转片</a> <a href="/tags/%E7%A6%84%E8%8E%B135/" style="font-size: 15px;">禄莱35</a> <a href="/tags/%E5%AF%8C%E5%A3%AB/" style="font-size: 15px;">富士</a> <a href="/tags/Pro-160NS/" style="font-size: 15px;">Pro 160NS</a> <a href="/tags/%E5%B0%8F%E7%B1%B3/" style="font-size: 15px;">小米</a> <a href="/tags/%E5%AF%B9%E8%AE%B2%E6%9C%BA/" style="font-size: 15px;">对讲机</a> <a href="/tags/%E6%B5%8B%E8%AF%84/" style="font-size: 15px;">测评</a> <a href="/tags/%E5%BC%80%E7%AE%B1/" style="font-size: 15px;">开箱</a> <a href="/tags/%E5%BC%80%E6%BA%90/" style="font-size: 15px;">开源</a> <a href="/tags/github/" style="font-size: 15px;">github</a> <a href="/tags/%E4%BA%92%E8%81%94%E7%BD%91/" style="font-size: 15px;">互联网</a> <a href="/tags/%E5%AD%A6%E4%B9%A0/" style="font-size: 15px;">学习</a> <a href="/tags/%E6%94%B6%E8%97%8F/" style="font-size: 15px;">收藏</a> <a href="/tags/%E7%BB%BC%E5%90%88/" style="font-size: 15px;">综合</a> <a href="/tags/%E5%8E%86%E5%8F%B2/" style="font-size: 15px;">历史</a> <a href="/tags/%E6%96%B0%E4%B8%AD%E5%9B%BD/" style="font-size: 15px;">新中国</a> <a href="/tags/%E9%80%97%E9%80%BC/" style="font-size: 15px;">逗逼</a> <a href="/tags/%E7%9A%87%E5%B8%9D/" style="font-size: 15px;">皇帝</a> <a href="/tags/%E6%9C%9D%E9%B2%9C/" style="font-size: 15px;">朝鲜</a> <a href="/tags/%E5%8D%AB%E6%98%9F/" style="font-size: 15px;">卫星</a> <a href="/tags/%E8%84%91%E6%B4%9E%E5%A4%A7%E5%BC%80/" style="font-size: 15px;">脑洞大开</a> <a href="/tags/%E9%87%91%E4%B8%89%E8%83%96/" style="font-size: 15px;">金三胖</a> <a href="/tags/Tri-x400/" style="font-size: 15px;">Tri-x400</a> <a href="/tags/%E4%BC%8A%E5%B0%94%E7%A6%8FDDX/" style="font-size: 15px;">伊尔福DDX</a> <a href="/tags/%E6%8A%BD%E8%B1%A1/" style="font-size: 15px;">抽象</a> <a href="/tags/%E8%89%BA%E6%9C%AF/" style="font-size: 15px;">艺术</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/posts/63878/">伊尔福HP5迫冲1600</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/53001/">ILFORD HP5 扫街</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/6709/">柯达400TX迫冲1600</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/41063/">Jupiter-8试镜</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/34759/">众生相</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/59107/">性本恶·花木</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/58724/">柯达5207电影卷扫街</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/31117/">禄来35+柯达400TX扫街【2019年04月04日】</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/11601/">福伦达R2M+柯达400TX扫街【2019年04月04日】</a></li><li class="post-list-item"><a class="post-list-link" href="/posts/8462/">柯达TMax100+福伦达R2M+七工匠35mm/f2</a></li></ul></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2020 <a href="/." rel="nofollow">得未曾有|BD7IWD.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox/dist/jquery.fancybox.min.css"><script type="text/javascript" src="/js/copycode.js" successtext="复制成功!"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
